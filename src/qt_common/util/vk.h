@@ -58,12 +58,13 @@ namespace VkDeviceInfo {
 class Record {
 public:
     explicit Record(std::string_view name, const std::vector<VkPresentModeKHR>& vsync_modes,
-                    bool has_broken_compute, std::string_view driver_version = {});
+                    bool has_broken_compute, bool fsr4_capable, std::string_view driver_version = {});
     ~Record();
 
     const std::string name;
     const std::vector<VkPresentModeKHR> vsync_support;
     const bool has_broken_compute;
+    const bool fsr4_capable; ///< VideoCommon::IsFsr4CapableGpu
     /// The driver's own version text (e.g. "581.57"), for support logs.
     const std::string driver_version;
 };
