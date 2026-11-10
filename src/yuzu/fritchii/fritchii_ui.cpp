@@ -154,8 +154,8 @@ bool ApplyTheme() {
 }
 
 bool HidesSetting(const std::string& label) {
-    // No frame generation in Fritchii (real frames only), and its options are dev tools.
-    return Enabled() && label.starts_with("frame_gen");
+    // Fritchii-AMD fork: frame generation is selectable again; only its dev tool stays hidden.
+    return Enabled() && label == "frame_gen_dump_flow";
 }
 
 QIcon Icon(const QString& name, int px) {

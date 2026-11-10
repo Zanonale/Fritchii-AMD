@@ -406,8 +406,8 @@ u32 FrameGenMultiplier() {
 }
 
 bool FrameGenActive() {
-    static const bool fritchii = std::string_view{Common::g_build_name} == "Fritchii";
-    return values.frame_gen.GetValue() && !fritchii;
+    // Fritchii-AMD fork: frame generation is allowed again (upstream Fritchii forces it off).
+    return values.frame_gen.GetValue();
 }
 
 namespace {
